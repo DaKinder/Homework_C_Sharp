@@ -67,9 +67,9 @@ bool Exception(int day)
 {
     if(day > 7)
     {
-        return false;
+        return true;
     } 
-    return true;
+    return false;
 }
 
 bool WeekendCheck(int day)
@@ -99,6 +99,6 @@ void ExceptionText()
 bool inRange = Exception(day);
 bool isTrue = WeekendCheck(day);
 
-if(isTrue && inRange) WeekendText();
-else if(inRange || isTrue) WeekdayText();
+if(isTrue) WeekendText();
+else if(!inRange) WeekdayText();
 else ExceptionText();
