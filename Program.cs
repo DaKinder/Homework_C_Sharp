@@ -1,7 +1,6 @@
 ﻿//Задача 10. Напишите программу которая принимает на вход трёхзначное число,
 //и на выходе показывает вторую цифру этого числа
 
-/*
 int CutMiddleDigit(int input)
 {
     int result;
@@ -9,12 +8,11 @@ int CutMiddleDigit(int input)
 }
 
 Console.Write("Введите трёхзначное число: ");
-int input = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine($"Среднее число: {CutMiddleDigit(input)}");
-*/
+int userInput = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine($"Среднее число: {CutMiddleDigit(userInput)}");
 
 //Задача 13: Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет.
-/*
+
 int CutTail(int input) //отрезает хвост
 {
     while(input >= 1000)
@@ -58,7 +56,7 @@ else
     int offTail = CutTail(input);
     int result = CutHead(offTail);
     Console.WriteLine($"Третье число: {result}");
-} */
+} 
 //Задача 15: Напишите программу, которая принимает на вход цифру,
 //обозначающую день недели, и проверяет, является ли этот день выходным.
 
