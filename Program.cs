@@ -1,10 +1,11 @@
-﻿//Задача 10. Напишите программу которая принимает на вход трёхзначное число,
+﻿using System;
+
+//Задача 10. Напишите программу которая принимает на вход трёхзначное число,
 //и на выходе показывает вторую цифру этого числа
 
 int CutMiddleDigit(int input)
 {
-    int result;
-    return result = input / 10 % 10;
+    return input / 10 % 10;
 }
 
 Console.Write("Введите трёхзначное число: ");
@@ -24,14 +25,12 @@ int CutTail(int input) //отрезает хвост
 
 int CutHead(int input) //отрезает голову
 {
-    input = input % 10;
-    
-    return input;
+     return input % 10;
 }
 
 void PrintException() //выводит исключение
 {
-    System.Console.WriteLine("Третьей цифры нет");
+    Console.WriteLine("Третьей цифры нет");
 }
 
 int Reverse(int input) //меняет знак
@@ -57,15 +56,13 @@ else
     int result = CutHead(offTail);
     Console.WriteLine($"Третье число: {result}");
 } 
+
 //Задача 15: Напишите программу, которая принимает на вход цифру,
 //обозначающую день недели, и проверяет, является ли этот день выходным.
 
-Console.Write("Введите день недели от одного до семи: ");
-int day = Convert.ToInt32(Console.ReadLine());
-
-bool Exception(int day)
+bool RangeCheck(int day)
 {
-    if(day > 7)
+    if(day > 0 && day < 8)
     {
         return true;
     } 
@@ -83,22 +80,31 @@ bool WeekendCheck(int day)
 
 void WeekendText()
 {
-    System.Console.WriteLine("Сегодня выходной!");
+    Console.WriteLine("Сегодня выходной!");
 }
 
 void WeekdayText()
 {
-    System.Console.WriteLine("Сегодня рабочий день!");
+    Console.WriteLine("Сегодня рабочий день!");
 }
 
 void ExceptionText()
 {
-    System.Console.WriteLine("Вы ввели некорректное число!");
+    Console.WriteLine("Вы ввели некорректное число!");
 }
 
-bool inRange = Exception(day);
-bool isTrue = WeekendCheck(day);
+Console.Write("Введите день недели от одного до семи: ");
+int day = Convert.ToInt32(Console.ReadLine());
 
-if(isTrue) WeekendText();
-else if(!inRange) WeekdayText();
+bool inRange = RangeCheck(day);
+bool isWeekend = WeekendCheck(day);
+
+if(inRange)
+{
+    if(isWeekend)
+    {
+        WeekendText();
+    }
+    else WeekdayText();
+}
 else ExceptionText();
