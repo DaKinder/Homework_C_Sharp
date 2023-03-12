@@ -28,33 +28,41 @@ int CutHead(int input) //отрезает голову
      return input % 10;
 }
 
+int Reverse(int input) //меняет знак
+{
+    if(input < 0)
+    return input *= -1;
+    else return input;
+}
+
+void PrintResult(int input) //выводит результат
+{
+    System.Console.WriteLine($"Третье число: {input}");
+}
+
 void PrintException() //выводит исключение
 {
     Console.WriteLine("Третьей цифры нет");
 }
 
-int Reverse(int input) //меняет знак
+bool InRange(int input) //проврка диапазона числа
 {
-    return input *= -1;
+    if(input <= -100 || input >= 100) return true;
+    else return false;
 }
 
 Console.Write("Введите любое целое число: ");
 int input = Convert.ToInt32(Console.ReadLine());
 
-if(input < 0)
-{
-    input = Reverse(input);
-} 
+bool range = InRange(input);
 
-if(input < 100)
-{
-    PrintException();
-} 
+if(!range) PrintException();
 else
 {
+    input = Reverse(input);
     int offTail = CutTail(input);
     int result = CutHead(offTail);
-    Console.WriteLine($"Третье число: {result}");
+    PrintResult(result);
 } 
 
 //Задача 15: Напишите программу, которая принимает на вход цифру,
@@ -105,6 +113,9 @@ if(inRange)
     {
         WeekendText();
     }
-    else WeekdayText();
+    else
+    {
+        WeekdayText();
+    } 
 }
 else ExceptionText();
