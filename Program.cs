@@ -37,7 +37,7 @@ int Reverse(int input) //меняет знак
 
 void PrintResult(int result) //выводит результат
 {
-    System.Console.WriteLine($"Третье число: {result}");
+    Console.WriteLine($"Третье число: {result}");
 }
 
 void PrintException() //выводит исключение
@@ -52,15 +52,15 @@ bool InRange(int input) //проврка диапазона числа
 }
 
 Console.Write("Введите любое целое число: ");
-int input = Convert.ToInt32(Console.ReadLine());
+int userNum = Convert.ToInt32(Console.ReadLine());
 
-bool range = InRange(input);
+bool range = InRange(userNum);
 
 if(!range) PrintException();
 else
 {
-    input = Reverse(input);
-    int offTail = CutTail(input);
+    userNum = Reverse(userNum);
+    int offTail = CutTail(userNum);
     int result = CutHead(offTail);
     PrintResult(result);
 } 
