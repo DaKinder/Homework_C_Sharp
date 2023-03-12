@@ -35,9 +35,9 @@ int Reverse(int input) //меняет знак
     else return input;
 }
 
-void PrintResult(int input) //выводит результат
+void PrintResult(int result) //выводит результат
 {
-    System.Console.WriteLine($"Третье число: {input}");
+    System.Console.WriteLine($"Третье число: {result}");
 }
 
 void PrintException() //выводит исключение
